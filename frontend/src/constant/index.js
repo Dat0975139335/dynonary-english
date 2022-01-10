@@ -23,11 +23,6 @@ export const DEFAULTS = {
     'https://res.cloudinary.com/dynonary/image/upload/v1625136714/dynonary/default-image.png',
 };
 
-export const LINKS = {
-  FB: 'https://fb.com/TuanNguyen250400',
-  WEBSITE: 'https://dynonguyen.com',
-};
-
 export const MAX = {
   EMAIL_LEN: 100,
   PASSWORD_LEN: 40,

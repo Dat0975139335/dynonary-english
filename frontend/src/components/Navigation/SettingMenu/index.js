@@ -39,13 +39,6 @@ function SettingMenu({ anchorEl, onClose }) {
         <p className={classes.text}>Cài đặt</p>
       </MenuItem>
 
-      <a href={LINKS.FB} target="_blank" rel="noreferrer">
-        <MenuItem className={classes.menuItem}>
-          <HelpIcon className={classes.icon} fontSize="small" />
-          <p className={classes.text}>Liên hệ - Giúp đỡ</p>
-        </MenuItem>
-      </a>
-
       <Link to={ROUTES.LOGOUT}>
         <MenuItem className={classes.menuItem}>
           <ExitToAppIcon className={classes.icon} fontSize="small" />
