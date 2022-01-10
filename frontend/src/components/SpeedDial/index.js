@@ -28,12 +28,6 @@ const actions = [
     isBlank: false,
   },
   { icon: <SettingButton />, name: 'Cài đặt', to: null, isBlank: false },
-  {
-    icon: <ContactMailIcon />,
-    name: 'Liên hệ Dyno',
-    to: LINKS.WEBSITE,
-    isBlank: true,
-  },
 ];
 
 function SpeedDials() {
