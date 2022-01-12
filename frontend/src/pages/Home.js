@@ -34,12 +34,12 @@ const FEATURE_LIST = [
   {
     title: 'Từ vựng với Flashcard',
     subTitle:
-      'Flashcard phương pháp học từ vựng nổi tiếng. Nay hoàn toàn miễn phí trên Dynonary',
+      'Flashcard phương pháp học từ vựng nổi tiếng. Nay hoàn toàn miễn phí trên Hama',
     imgUrl: flashcardIcon,
     to: ROUTES.FLASHCARD,
   },
   {
-    title: 'Từ điển trong Dynonary',
+    title: 'Từ điển trong Hama',
     subTitle: 'Danh sách từ vựng được phân loại theo cấp độ, loại từ, ...',
     imgUrl: dictionaryIcon,
     to: ROUTES.DYNO_DICTIONARY,
@@ -91,7 +91,7 @@ const FEATURE_LIST = [
 ];
 
 function HomePage() {
-  useTitle('Dynonary - Ứng dụng học tiếng Anh miễn phí');
+  useTitle('Hama - Ứng dụng học tiếng Anh miễn phí');
   useScrollTop();
 
   return (

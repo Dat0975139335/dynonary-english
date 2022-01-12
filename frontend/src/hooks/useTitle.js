@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
 // set title for component
-function useTitle(title = 'Dynonary', isOverride = false) {
+function useTitle(title = 'Hama', isOverride = false) {
   useEffect(() => {
     if (isOverride) {
       document.title = title;
     } else {
-      document.title = title !== 'Dynonary' ? `${title} - Dynonary` : title;
+      document.title = title !== 'Hama' ? `${title} - Hama` : title;
     }
   }, []);
 
