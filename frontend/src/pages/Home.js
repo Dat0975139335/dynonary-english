@@ -85,7 +85,7 @@ const FEATURE_LIST = [
     title: 'Đóng góp',
     imgUrl: editIcon,
     subTitle:
-      'Dyno rất mong được sự đóng góp của bạn. Bạn có thể thêm từ mới, sửa lỗi sai',
+      'Hama rất mong được sự đóng góp của bạn. Bạn có thể thêm từ mới, sửa lỗi sai',
     to: ROUTES.CONTRIBUTION,
   },
 ];
