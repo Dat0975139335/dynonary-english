@@ -21,8 +21,6 @@ const {
   MAX,
 } = require('../constant');
 const jwtConfig = require('../configs/jwt.config');
-const express = require('express');
-const app = express();
 const mailConfig = require('../configs/mail.config');
 const {
   saveVerifyCode,

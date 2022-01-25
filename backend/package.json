@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js --inspect",
-    "test": "jest --watch"
+    "test": "mocha --timeout 10000"
   },
   "author": "Tuan Nguyen",
   "license": "ISC",
@@ -28,10 +28,9 @@
   },
   "devDependencies": {
     "chai": "^4.3.4",
-    "jest": "^27.4.7",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.1.4",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7",
-    "sinon": "^12.0.1",
-    "supertest": "^6.2.1"
+    "nodemon": "^2.0.7"
   }
 }
