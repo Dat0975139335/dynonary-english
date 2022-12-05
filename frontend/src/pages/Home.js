@@ -18,7 +18,7 @@ import useTitle from 'hooks/useTitle';
 import React from 'react';
 
 const FEATURE_LIST = [
-  {
+  /*{
     title: 'Bảng phiên âm (IPA)',
     subTitle:
       'Luyện nghe, phát âm chuẩn với 44 âm trong bảng phiên âm quốc tế IPA',
@@ -30,7 +30,7 @@ const FEATURE_LIST = [
     subTitle: 'Luyện nghe, nói câu tiếng Anh giao tiếp hàng ngày cùng Dyno',
     imgUrl: communicateIcon,
     to: ROUTES.COMMUNICATION_PHRASE,
-  },
+  },*/
   {
     title: 'Từ vựng với Flashcard',
     subTitle:
@@ -38,7 +38,7 @@ const FEATURE_LIST = [
     imgUrl: flashcardIcon,
     to: ROUTES.FLASHCARD,
   },
-  {
+  /*{
     title: 'Từ điển trong Hama',
     subTitle: 'Danh sách từ vựng được phân loại theo cấp độ, loại từ, ...',
     imgUrl: dictionaryIcon,
@@ -87,7 +87,7 @@ const FEATURE_LIST = [
     subTitle:
       'Hama rất mong được sự đóng góp của bạn. Bạn có thể thêm từ mới, sửa lỗi sai',
     to: ROUTES.CONTRIBUTION,
-  },
+  },*/
 ];
 
 function HomePage() {
@@ -96,7 +96,7 @@ function HomePage() {
 
   return (
     <div className="container my-10">
-      {/* <Grid container spacing={3}>
+      { <Grid container spacing={3}>
         {FEATURE_LIST.map((box, index) => (
           <Grid item xs={12} md={6} lg={4} key={index}>
             <FeatureBox
@@ -107,7 +107,7 @@ function HomePage() {
             />
           </Grid>
         ))}
-      </Grid> */}
+      </Grid>}
     </div>
   );
 }
