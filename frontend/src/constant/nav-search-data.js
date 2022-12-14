@@ -30,6 +30,12 @@ const NAV_SEARCH_DATA = [
     to: ROUTES.DYNO_DICTIONARY,
   },
   {
+    title: 'Danh sách truyện',
+    searchKey:
+      'danh sách truyện phân loại cấp độ vocabulary dictionary level type list hama',
+    to: ROUTES.STORY_LIST,
+  },
+  {
     title: 'từ vựng TOEIC',
     searchKey: 'vocab vocabulary toeic exam từ thường gặp',
     to: ROUTES.TOEIC_DICTIONARY,
@@ -38,6 +44,11 @@ const NAV_SEARCH_DATA = [
     title: 'từ yêu thích của bạn',
     searchKey: 'favorite list vocab vocabulary đã lưu của bạn',
     to: ROUTES.FAVORITE,
+  },
+  {
+    title: 'Đọc truyện',
+    searchKey: 'favorite list vocab vocabulary đã lưu của bạn',
+    to: ROUTES.STORY,
   },
   {
     title: 'động từ bất quy tắc',

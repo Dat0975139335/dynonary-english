@@ -10,6 +10,7 @@ const ContributionPage = React.lazy(() => import('pages/Contribution'));
 const PlayGamesPage = React.lazy(() => import('pages/PlayGames'));
 const FlashcardPage = React.lazy(() => import('pages/Flashcard'));
 const DynoDictionaryPage = React.lazy(() => import('pages/DynoDictionary'));
+const StoryListPage = React.lazy(() => import('pages/StoryList'));
 const CommunicationPhrasePage = React.lazy(() =>
   import('pages/CommunicationPhrase'),
 );
@@ -18,8 +19,9 @@ const WordMatchGamePage = React.lazy(() => import('pages/PlayGames/WordMatch'));
 const FastGamePage = React.lazy(() => import('pages/PlayGames/FastGame'));
 const GrammarPage = React.lazy(() => import('pages/Grammar'));
 const FavoriteDictionaryPage = React.lazy(() =>
-  import('pages/FavoriteDictionary'),
+import('pages/FavoriteDictionary'),
 );
+const StoryPage = React.lazy(() => import('pages/Story'));
 const IrregularVerbPage = React.lazy(() => import('pages/IrregularVerb'));
 const ForgotPasswordPage = React.lazy(() => import('pages/ForgotPassword'));
 const UserAccountPage = React.lazy(() => import('pages/UserAccount'));
@@ -94,6 +96,12 @@ const routes = [
     component: () => <DynoDictionaryPage isTOEIC={false} />,
   },
   {
+    path: ROUTES.STORY_LIST,
+    exact: false,
+    isProtect: false,
+    component: () => <StoryListPage isTOEIC={false} />,
+  },
+  {
     path: ROUTES.TOEIC_DICTIONARY,
     exact: false,
     isProtect: false,
@@ -116,6 +124,12 @@ const routes = [
     exact: false,
     isProtect: true,
     component: () => <FavoriteDictionaryPage />,
+  },
+  {
+    path: ROUTES.STORY,
+    exact: false,
+    isProtect: true,
+    component: () => <StoryPage />,
   },
   {
     path: ROUTES.IRREGULAR,
