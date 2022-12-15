@@ -56,21 +56,6 @@ function Flashcard({
               className={`${classes.icon} ${mode === 1 ? 'active' : ''}`}
             />
           </Tooltip>
-
-          <Tooltip title="Xem nghĩa của từ" placement="bottom">
-            {isShowMean ? (
-              <VisibilityOffIcon
-                className={classes.icon}
-                onClick={() => setIsShowMean(false)}
-              />
-            ) : (
-              <VisibilityIcon
-                className={classes.icon}
-                onClick={() => setIsShowMean(true)}
-              />
-            )}
-          </Tooltip>
-
           <TooltipCustom title={tutorial} placement="bottom">
             <HelpIcon className={classes.icon} />
           </TooltipCustom>
