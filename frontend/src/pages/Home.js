@@ -67,8 +67,8 @@ const FEATURE_LIST = [
     imgUrl: grammarIcon,
     subTitle: 'Danh sách tổng hợp những cấu trúc câu trong tiếng Anh',
     to: ROUTES.GRAMMAR,
-  },
-  {
+  },*/
+  /*{
     title: 'Play Games',
     imgUrl: gameIcon,
     subTitle:
