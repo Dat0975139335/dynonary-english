@@ -41,31 +41,19 @@ function TopicSelect({
 
   return (
     <>
-      <ButtonWrapper>
-        <Button
-          color="secondary"
-          variant="contained"
-          endIcon={visible ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-          className={`${classes.button} w-100 h-100`}
-          onClick={() => setVisible(!visible)}>
-          {buttonTitle}
-        </Button>
-      </ButtonWrapper>
       <TagsWrapper className={visible ? '' : classes.tagsWrap}>
-        <Collapse in={visible}>
-          <div className={classes.tags}>
-            {topicList.map((topic, index) => (
-              <Tag
-                resetFlag={resetFlag}
-                iconSrc={topic.icon}
-                title={topic.title}
-                key={index}
-                id={topic.key}
-                onChange={handleTopicChange}
-              />
-            ))}
-          </div>
-        </Collapse>
+        <div className={classes.tags}>
+          {topicList.map((topic, index) => (
+            <Tag
+              resetFlag={resetFlag}
+              iconSrc={topic.icon}
+              title={topic.title}
+              key={index}
+              id={topic.key}
+              onChange={handleTopicChange}
+            />
+          ))}
+        </div>
       </TagsWrapper>
     </>
   );

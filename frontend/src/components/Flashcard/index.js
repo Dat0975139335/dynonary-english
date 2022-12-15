@@ -1,3 +1,4 @@
+import { Button } from '@material-ui/core';
 import Tooltip from '@material-ui/core/Tooltip';
 import HelpIcon from '@material-ui/icons/Help';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -6,12 +7,15 @@ import CollectionsIcon from '@material-ui/icons/ViewQuilt';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import TooltipCustom from 'components/UI/TooltipCustom';
+import TopicPack from 'components/UI/TopicPack';
 import WordPack from 'components/UI/WordPack';
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
 import GalleryList from './GalleryList';
 import SlideShow from './SlideShow';
 import useStyle from './style';
+
+
 
 const perPage = 7;
 const tutorial =
@@ -24,17 +28,20 @@ function Flashcard({
   onNextPage,
   onPrevPage,
   onWordPackChange,
+  openTopicPackChange
 }) {
   const classes = useStyle();
   const [mode, setMode] = useState(0); // 0 - gallery, 1 - slide show
   const [isShowMean, setIsShowMean] = useState(false);
   const [openWordPack, setOpenWordPack] = useState(false);
+  const [openTopicPack, setOpenTopicPack] = useState(false);
   const currentSlide = useRef(0);
 
   return (
     <div className="container my-10">
       <div className="flex-center-between">
         <h1 className="dyno-title">Flashcard</h1>
+        <Button variant="contained"   onClick={() => setOpenTopicPack(true)}> Chọn chủ đề</Button>
         <div className={classes.iconWrap}>
           <Tooltip title="Chế độ bộ sưu tập" placement="bottom">
             <CollectionsIcon
@@ -49,46 +56,24 @@ function Flashcard({
               className={`${classes.icon} ${mode === 1 ? 'active' : ''}`}
             />
           </Tooltip>
-
-          <Tooltip title="Xem nghĩa của từ" placement="bottom">
-            {isShowMean ? (
-              <VisibilityOffIcon
-                className={classes.icon}
-                onClick={() => setIsShowMean(false)}
-              />
-            ) : (
-              <VisibilityIcon
-                className={classes.icon}
-                onClick={() => setIsShowMean(true)}
-              />
-            )}
-          </Tooltip>
-
-          <Tooltip title="Cài đặt gói từ vựng" placement="bottom">
-            <SettingsIcon
-              className={classes.icon}
-              onClick={() => setOpenWordPack(true)}
-            />
-          </Tooltip>
-
           <TooltipCustom title={tutorial} placement="bottom">
             <HelpIcon className={classes.icon} />
           </TooltipCustom>
         </div>
       </div>
-      <div className="dyno-break" />
-
-      {openWordPack && (
-        <WordPack
+      <div className="dyno-break" />    
+  
+      {openTopicPack && (
+        <TopicPack 
           open={true}
           topicMultiples={true}
-          onCancel={() => setOpenWordPack(false)}
+          onCancel={() => setOpenTopicPack(false)}
           cancelBtnText="Đóng"
           onChoose={(packInfo) => {
-            onWordPackChange(packInfo);
-            setOpenWordPack(false);
+          openTopicPackChange(packInfo);
+          setOpenTopicPack(false);
           }}
-        />
+        ></TopicPack>
       )}
 
       {mode === 0 ? (

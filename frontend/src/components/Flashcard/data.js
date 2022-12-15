@@ -133,6 +133,31 @@ function FlashcardData() {
     setTotal(-1);
   };
 
+  const openTopicPackChange = (newPackInfo) => {
+    const { packInfo } = pageInfo;
+
+    // check the similarity
+    let isSame = true;
+    const { topics } = newPackInfo;
+    isSame = equalArray(topics, packInfo.topics);
+    for (let k in packInfo) {
+      if (k !== 'topics' && packInfo[k] !== newPackInfo[k]) {
+        isSame = false;
+        break;
+      }
+    }
+
+    if (isSame) return;
+
+    // reset and call API
+    list.current = [];
+    setPageInfo({
+      page: 1,
+      packInfo: newPackInfo,
+    });
+    setTotal(-1);
+  };
+
   return (
     <Flashcard
       list={currentList}
@@ -141,6 +166,7 @@ function FlashcardData() {
       onNextPage={handleNextClick}
       onPrevPage={handlePrevClick}
       onWordPackChange={onWordPackChange}
+      openTopicPackChange={openTopicPackChange}
     />
   );
 }
