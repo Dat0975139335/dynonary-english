@@ -5,7 +5,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import Search from '@material-ui/icons/Search';
 import defaultUserImg from 'assets/images/default-user.png';
-import logoUrl from 'assets/images/logo.png';
+import logoUrl from 'assets/images/logo1.png';
 import SearchInputCustom from 'components/UI/SearchInputCustom';
 import { ROUTES } from 'constant';
 import { cloudinaryImgOptimize } from 'helper';
