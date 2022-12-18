@@ -167,6 +167,7 @@ function FlashcardData() {
       onPrevPage={handlePrevClick}
       onWordPackChange={onWordPackChange}
       openTopicPackChange={openTopicPackChange}
+      currentTopicPackChange={pageInfo.packInfo.topics}
     />
   );
 }

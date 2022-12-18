@@ -15,8 +15,6 @@ import GalleryList from './GalleryList';
 import SlideShow from './SlideShow';
 import useStyle from './style';
 
-
-
 const perPage = 7;
 const tutorial =
   'Có 2 chế độ xem là gallery và slide. Bấm vào biểu tượng mắt để bật tắt nghĩa của từ.';
@@ -28,20 +26,23 @@ function Flashcard({
   onNextPage,
   onPrevPage,
   onWordPackChange,
-  openTopicPackChange
+  currentTopicPackChange,
+  openTopicPackChange,
 }) {
   const classes = useStyle();
   const [mode, setMode] = useState(0); // 0 - gallery, 1 - slide show
   const [isShowMean, setIsShowMean] = useState(false);
   const [openWordPack, setOpenWordPack] = useState(false);
-  const [openTopicPack, setOpenTopicPack] = useState(false);
+  const [openTopicPack, setOpenTopicPack] = useState(true);
   const currentSlide = useRef(0);
 
   return (
     <div className="container my-10">
       <div className="flex-center-between">
         <h1 className="dyno-title">Flashcard</h1>
-        <Button variant="contained"   onClick={() => setOpenTopicPack(true)}> Chọn chủ đề</Button>
+        <Button variant="contained" onClick={() => setOpenTopicPack(true)}>
+          Chọn chủ đề
+        </Button>
         <div className={classes.iconWrap}>
           <Tooltip title="Chế độ bộ sưu tập" placement="bottom">
             <CollectionsIcon
@@ -61,42 +62,43 @@ function Flashcard({
           </TooltipCustom>
         </div>
       </div>
-      <div className="dyno-break" />    
-  
+      <div className="dyno-break" />
       {openTopicPack && (
-        <TopicPack 
+        <TopicPack
           open={true}
           topicMultiples={true}
           onCancel={() => setOpenTopicPack(false)}
           cancelBtnText="Đóng"
           onChoose={(packInfo) => {
-          openTopicPackChange(packInfo);
-          setOpenTopicPack(false);
-          }}
-        ></TopicPack>
+            openTopicPackChange(packInfo);
+            setOpenTopicPack(false);
+          }}></TopicPack>
       )}
-
-      {mode === 0 ? (
-        <GalleryList
-          list={list}
-          onPrev={onPrevPage}
-          onNext={onNextPage}
-          total={Math.ceil(total / perPage)}
-          current={currentPage}
-          showMean={isShowMean}
-        />
-      ) : (
-        <SlideShow
-          list={list}
-          total={total}
-          onGetNewList={onNextPage}
-          onGetOldList={onPrevPage}
-          showMean={isShowMean}
-          currentSlide={currentSlide.current}
-          onSaveCurrentSlide={(v) => (currentSlide.current = v)}
-          totalCurrentSlide={(currentPage - 1) * perPage + currentSlide.current}
-        />
-      )}
+      {currentTopicPackChange.length > 0 ? (
+        mode === 0 ? (
+          <GalleryList
+            list={list}
+            onPrev={onPrevPage}
+            onNext={onNextPage}
+            total={Math.ceil(total / perPage)}
+            current={currentPage}
+            showMean={isShowMean}
+          />
+        ) : (
+          <SlideShow
+            list={list}
+            total={total}
+            onGetNewList={onNextPage}
+            onGetOldList={onPrevPage}
+            showMean={isShowMean}
+            currentSlide={currentSlide.current}
+            onSaveCurrentSlide={(v) => (currentSlide.current = v)}
+            totalCurrentSlide={
+              (currentPage - 1) * perPage + currentSlide.current
+            }
+          />
+        )
+      ) : null}
     </div>
   );
 }
