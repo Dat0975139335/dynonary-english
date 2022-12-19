@@ -12,17 +12,32 @@ export default makeStyles(() => ({
     },
   },
 
-  picture: {
-    display: 'none',
+  wrapper_item: {
+    display: 'flex',
+    flexDirection: ''
   },
 
-  word: {
+  picture: {
+    width: '5rem',
+    height: '5rem',
+  },
+
+  name: {
+    width: '500px',
+    overflow: 'hidden',
     fontSize: '1.8rem',
     fontWeight: 500,
     color: 'var(--primary-color)',
   },
 
-  type: {
+  description: {
+    display: 'inline-block',
+    width: '450px',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap', 
+    textOverflow: 'ellipsis',
+    fontSize: '1.8rem',
+    fontWeight: 500,
     color: 'var(--label-color)',
   },
 

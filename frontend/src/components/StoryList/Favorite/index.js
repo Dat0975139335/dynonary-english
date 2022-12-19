@@ -7,6 +7,14 @@ import DynoDictionaryItemData from '../Item/data';
 import DynoDictionarySkeleton from '../Skeleton';
 import useStyle from '../style';
 
+const STORY = {
+  name: 'The fox and the grapes',
+  description:
+    "One day a fox spied a beautiful bunch of ripe grapes hanging from a vine along the branches of a tree. The grapes seemed ready to burst with juice, and the fox's mouth watered as he gazed longingly at them.",
+  picture:
+    'https://ila.edu.vn/uploads/SEO/ila-truyen-tieng-anh-cho-be-shutterstock_1296413959.jpg',
+};
+
 function FavoriteDictionary({
   list,
   loading,
@@ -36,42 +44,7 @@ function FavoriteDictionary({
       <div className={classes.contentWrap}>
 
         <div className={`${classes.listWrap} w-100`}>
-          <ul id="dictionaryId" className={`${classes.list} flex-col w-100`}>
-            <>
-              {isFirstLoad ? (
-                <DynoDictionarySkeleton className={classes.skeleton} />
-              ) : (
-                <>
-                  {list && list.length > 0 ? (
-                    <>
-                      {/* render list */}
-                      {list.map((item, index) => (
-                        <li className={classes.listItem} key={index}>
-                          <DynoDictionaryItemData {...item} />
-                        </li>
-                      ))}
-
-                      {/* infinite scrolling */}
-                      {!loading && more && (
-                        <InfiniteScroll
-                          onTouchAnchor={onLoadData}
-                          threshold={1}>
-                          <div className="w-100 t-center">
-                            <LoopIcon className="ani-spin" />
-                          </div>
-                        </InfiniteScroll>
-                      )}
-                    </>
-                  ) : (
-                    // empty list
-                    <h3 className="notfound-title h-100 flex-center t-center">
-                      Khu vực render truyện ra cho người đọc 😉
-                    </h3>
-                  )}
-                </>
-              )}
-            </>
-          </ul>
+          ＧＦ
         </div>
       </div>
     </div>
