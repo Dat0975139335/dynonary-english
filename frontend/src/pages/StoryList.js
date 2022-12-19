@@ -1,3 +1,4 @@
+import Navigation from 'components/Navigation';
 import StoryListData from 'components/StoryList/data';
 import useCloseNavigation from 'hooks/useCloseNavigation';
 import useTitle from 'hooks/useTitle';
@@ -10,6 +11,7 @@ function StoryListPage({ isTOEIC }) {
 
   return (
     <div className="container">
+      <Navigation/>,
       <StoryListData isTOEIC={isTOEIC} />
     </div>
   );
