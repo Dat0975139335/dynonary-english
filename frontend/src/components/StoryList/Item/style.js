@@ -14,10 +14,10 @@ export default makeStyles(() => ({
 
   wrapper_item: {
     display: 'flex',
-    flexDirection: ''
   },
 
   picture: {
+    display: 'inline-block',
     width: '5rem',
     height: '5rem',
   },

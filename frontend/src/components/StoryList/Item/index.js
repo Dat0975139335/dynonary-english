@@ -33,7 +33,7 @@ function DynoDictionaryItem({ name, description, picture }) {
         /* onClick={() => onShowDetail(word)} */
       >
         <Link to={ROUTES.STORY}>
-          <div className='wrapper_item'>
+          <div className={classes.wrapper_item}>
             <img className={classes.picture} src={picture} alt="photo" />
             <div className="ml-8 flex-grow-1">
               <h3 className={classes.name}>{name} </h3>

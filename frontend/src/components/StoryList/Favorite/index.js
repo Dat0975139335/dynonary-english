@@ -42,9 +42,12 @@ function FavoriteDictionary({
 
       {/* list content */}
       <div className={classes.contentWrap}>
-
         <div className={`${classes.listWrap} w-100`}>
-          ＧＦ
+          <ul id="dictionaryId" className={`${classes.list} flex-col w-100`}>
+            <h3 className="notfound-title h-100 flex-center t-center">
+              {STORY.description}
+            </h3>
+          </ul>
         </div>
       </div>
     </div>

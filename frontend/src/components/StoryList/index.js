@@ -63,7 +63,7 @@ function StoryList({
                       ))}
 
                       {/* infinite scrolling */}
-                      {!loading && more && (
+                      {/* {!loading && more && (
                         <InfiniteScroll
                           onTouchAnchor={onLoadData}
                           threshold={1}>
@@ -71,7 +71,7 @@ function StoryList({
                             <LoopIcon className="ani-spin" />
                           </div>
                         </InfiniteScroll>
-                      )}
+                      )} */}
                     </>
                   ) : (
                     // empty list
