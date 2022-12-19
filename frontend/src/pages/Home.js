@@ -50,12 +50,12 @@ const FEATURE_LIST = [
     subTitle: 'Chi tiết nội dung truyện',
     to: ROUTES.STORY,
   }, */
-  {
+  /* {
     title: 'Từ điển trong Hama',
     subTitle: 'Danh sách từ vựng được phân loại theo cấp độ, loại từ, ...',
     imgUrl: dictionaryIcon,
     to: ROUTES.DYNO_DICTIONARY,
-  },
+  }, */
   /* {
     title: 'Từ vựng TOEIC',
     subTitle: 'Các từ vựng thường gặp trong đề thi Toeic',
