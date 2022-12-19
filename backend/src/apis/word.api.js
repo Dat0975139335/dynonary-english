@@ -13,7 +13,7 @@ wordApi.get(
   jwtAuthentication,
   wordController.getUserFavoriteList,
 );
-wordApi.get('/words/:id', wordController.getWordById);
+wordApi.get('/:id', wordController.getWordById);
 
 
 module.exports = wordApi;

@@ -148,7 +148,6 @@ exports.getUserFavoriteList = async (req, res, next) => {
 
 exports.getWordById = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   const word = await getWordById(id);
   return res.status(200).json(word);
 }

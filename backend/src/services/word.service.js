@@ -60,7 +60,7 @@ exports.getFavoriteList = async (rawFavorites = []) => {
 
 exports.getWordById = async id => {
   const searchResult = await WordModel.findById({ _id: id });
-  if (!word) {
+  if (!searchResult) {
     return {
       code: 404,
       data: {}
