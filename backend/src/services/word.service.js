@@ -57,3 +57,21 @@ exports.getFavoriteList = async (rawFavorites = []) => {
     throw error;
   }
 };
+
+exports.getWordById = async id => {
+  const searchResult = await WordModel.findById({ _id: id });
+  if (!searchResult) {
+    return {
+      code: 404,
+      data: {}
+    }
+  } else return {
+    code: 200,
+    data: {
+      word: searchResult.word,
+      picture: searchResult.picture,
+      phonetic: searchResult.phonetic,
+      mean: searchResult.mean,
+    }
+  }
+}

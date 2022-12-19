@@ -1,14 +1,14 @@
 {
-  "name": "dynonary-apis",
+  "name": "english_app_apis",
   "version": "1.0.0",
-  "description": "Dynonary - Free web app to learn english",
+  "description": "Web app to learn english",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js --inspect",
     "test": "mocha --timeout 10000"
   },
-  "author": "Tuan Nguyen",
+  "author": "TEAM GOUKAKU",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
