@@ -40,10 +40,10 @@ function TopicSelect({
   }, [resetFlag]);
 
   return (
-    <>
-      
+    <>   
       <TagsWrapper className={visible ? '' : classes.tagsWrap}>
       <div className={classes.tags}>
+
           {topicList.map((topic, index) => (
             <Tag
               resetFlag={resetFlag}

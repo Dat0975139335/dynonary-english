@@ -34,7 +34,7 @@ const FEATURE_LIST = [
   {
     title: 'Từ vựng với Flashcard',
     subTitle:
-      'Flashcard phương pháp học từ vựng nổi tiếng. Nay hoàn toàn miễn phí trên Hama',
+      'Flashcard phương pháp học từ vựng nổi tiếng. Nay hoàn toàn miễn phí trên ENG_ITSS',
     imgUrl: flashcardIcon,
     to: ROUTES.FLASHCARD,
   },
@@ -50,8 +50,8 @@ const FEATURE_LIST = [
     subTitle: 'Chi tiết nội dung truyện',
     to: ROUTES.STORY,
   }, */
-  /* {
-    title: 'Từ điển trong Hama',
+  /*{
+    title: 'Từ điển trong ENG_ITSS',
     subTitle: 'Danh sách từ vựng được phân loại theo cấp độ, loại từ, ...',
     imgUrl: dictionaryIcon,
     to: ROUTES.DYNO_DICTIONARY,
@@ -79,8 +79,8 @@ const FEATURE_LIST = [
     imgUrl: grammarIcon,
     subTitle: 'Danh sách tổng hợp những cấu trúc câu trong tiếng Anh',
     to: ROUTES.GRAMMAR,
-  },
-  {
+  },*/
+  /*{
     title: 'Play Games',
     imgUrl: gameIcon,
     subTitle:
@@ -97,13 +97,13 @@ const FEATURE_LIST = [
     title: 'Đóng góp',
     imgUrl: editIcon,
     subTitle:
-      'Hama rất mong được sự đóng góp của bạn. Bạn có thể thêm từ mới, sửa lỗi sai',
+      'ENG_ITSS rất mong được sự đóng góp của bạn. Bạn có thể thêm từ mới, sửa lỗi sai',
     to: ROUTES.CONTRIBUTION,
   }, */
 ];
 
 function HomePage() {
-  useTitle('Hama - Ứng dụng học tiếng Anh miễn phí');
+  useTitle('ENG_ITSS - Học tiếng Anh');
   useScrollTop();
 
   return (

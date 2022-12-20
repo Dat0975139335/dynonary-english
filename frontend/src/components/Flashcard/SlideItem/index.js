@@ -24,7 +24,7 @@ function SliceExample({ word, example }) {
 
 function SlideItem({ mean, word, type, phonetic, example, picture, showMean }) {
   const classes = useStyle({ picture });
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
     const item = document.getElementsByClassName(classes.root)[0];
@@ -34,10 +34,10 @@ function SlideItem({ mean, word, type, phonetic, example, picture, showMean }) {
     }, 0);
     return () => {};
   });
+  
   const transaleWord = () => {
-    setHidden(!hidden);
-}
-
+      setHidden(!hidden);
+  }
   return (
     <div className={`${classes.root} ani-fade`}>
       {word && word !== '' && (

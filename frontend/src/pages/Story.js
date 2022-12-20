@@ -13,6 +13,6 @@ function StoryPage() {
     <Navigation/>,
     <StoryData />;
     </>
-)}
+);}
 
 export default StoryPage;

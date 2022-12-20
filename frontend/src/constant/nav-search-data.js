@@ -24,9 +24,9 @@ const NAV_SEARCH_DATA = [
     to: ROUTES.FLASHCARD,
   },
   {
-    title: 'từ điển Hama',
+    title: 'từ điển ENG_ITSS',
     searchKey:
-      'danh sách từ phân loại cấp độ vocabulary dictionary level type list hama',
+      'danh sách từ phân loại cấp độ vocabulary dictionary level type list ENG_ITSS',
     to: ROUTES.DYNO_DICTIONARY,
   },
   {

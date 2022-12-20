@@ -14,8 +14,8 @@ function GalleryItem({ word, mean, phonetic, type, picture, showMean }) {
     if (word && word !== '') {
       onTextToSpeech(word, voice, speed, volume);
     }
-    setHidden(!hidden);
-    console.log(hidden);
+    setHidden(!hidden)
+    console.log(hidden)
   };
 
   return (

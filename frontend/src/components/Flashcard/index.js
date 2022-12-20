@@ -26,7 +26,9 @@ function Flashcard({
   onNextPage,
   onPrevPage,
   onWordPackChange,
-  openTopicPackChange
+
+  currentTopicPackChange,
+  openTopicPackChange,
 }) {
   const classes = useStyle();
   const [mode, setMode] = useState(0); // 0 - gallery, 1 - slide show
@@ -39,7 +41,9 @@ function Flashcard({
     <div className="container my-10">
       <div className="flex-center-between">
         <h1 className="dyno-title">Flashcard</h1>
-        <Button variant="contained"   onClick={() => setOpenTopicPack(true)}> Chọn chủ đề</Button>
+        <Button variant="contained" onClick={() => setOpenTopicPack(true)}>
+          Chọn chủ đề
+        </Button>
         <div className={classes.iconWrap}>
           <Tooltip title="Chế độ bộ sưu tập" placement="bottom">
             <CollectionsIcon
@@ -60,42 +64,46 @@ function Flashcard({
           </TooltipCustom>
         </div>
       </div>
-      <div className="dyno-break" />    
-  
+
+      <div className="dyno-break" />
       {openTopicPack && (
-        <TopicPack 
+        <TopicPack
+
           open={true}
           topicMultiples={true}
           onCancel={() => setOpenTopicPack(false)}
           cancelBtnText="Đóng"
           onChoose={(packInfo) => {
             openTopicPackChange(packInfo);
-          setOpenTopicPack(false);
-          }}
-          ></TopicPack>
-      )}
 
-      {mode === 0 ? (
-        <GalleryList
-          list={list}
-          onPrev={onPrevPage}
-          onNext={onNextPage}
-          total={Math.ceil(total / perPage)}
-          current={currentPage}
-          showMean={isShowMean}
-        />
-      ) : (
-        <SlideShow
-          list={list}
-          total={total}
-          onGetNewList={onNextPage}
-          onGetOldList={onPrevPage}
-          showMean={isShowMean}
-          currentSlide={currentSlide.current}
-          onSaveCurrentSlide={(v) => (currentSlide.current = v)}
-          totalCurrentSlide={(currentPage - 1) * perPage + currentSlide.current}
-        />
+            setOpenTopicPack(false);
+          }}></TopicPack>
       )}
+      {currentTopicPackChange.length > 0 ? (
+        mode === 0 ? (
+          <GalleryList
+            list={list}
+            onPrev={onPrevPage}
+            onNext={onNextPage}
+            total={Math.ceil(total / perPage)}
+            current={currentPage}
+            showMean={isShowMean}
+          />
+        ) : (
+          <SlideShow
+            list={list}
+            total={total}
+            onGetNewList={onNextPage}
+            onGetOldList={onPrevPage}
+            showMean={isShowMean}
+            currentSlide={currentSlide.current}
+            onSaveCurrentSlide={(v) => (currentSlide.current = v)}
+            totalCurrentSlide={
+              (currentPage - 1) * perPage + currentSlide.current
+            }
+          />
+        )
+      ) : null}
     </div>
   );
 }
