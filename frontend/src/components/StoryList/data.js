@@ -90,7 +90,7 @@ function StoryListData({ isTOEIC }) {
     totalPage.current = 0;
     preSearchList.current = [];
     setMore(true);
-    setList([]);
+    // setList([]);
     setPackInfo(info);
     setPage(1);
   };
@@ -100,7 +100,7 @@ function StoryListData({ isTOEIC }) {
     preSearchList.current = [];
     setSortType(type);
     setPage(1);
-    setList([]);
+    // setList([]);
   };
 
   /* const onSearchWord = async (name) => {
